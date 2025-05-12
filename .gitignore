@@ -4,6 +4,7 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 # User-specific files
+web-cli_Tizen_Studio_5.5_windows-64.exe
 *.exe
 *.rsuser
 *.suo
