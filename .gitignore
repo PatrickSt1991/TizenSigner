@@ -363,3 +363,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/.git.bfg-report/2025-05-12/19-11-21
+/bfg.jar
