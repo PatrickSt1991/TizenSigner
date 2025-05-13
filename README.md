@@ -2,6 +2,8 @@
 
 Tool voor het installeren van Club Info Board op je Samsung Smart TV
 
+![cib](https://github.com/user-attachments/assets/73cff685-58c7-4572-8001-fa5b7437dd80)
+
 ## Vereisten
 - Samsung Tizen TV (met ontwikkelmodus ingeschakeld)
 - Het IP-adres van de TV
