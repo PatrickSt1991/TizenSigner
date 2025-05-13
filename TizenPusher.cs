@@ -53,7 +53,9 @@ namespace TizenSigner
 
             RunCommand(tizenPath, $"package -t wgt -s custom -- {fullWgtPath}");
 
-            //RunCommand(tizenPath, $"install -n {fullWgtPath} -t {tvName}");
+            RunCommand(tizenPath, $"install -n {fullWgtPath} -t {tvName}");
+
+            RunCommand(sdbPath, $"disconnect {address}");
         }
 
         void UpdateProfileCertificatePaths()
@@ -81,12 +83,15 @@ namespace TizenSigner
             return !string.IsNullOrEmpty(_tizenCliPath) && 
                 !string.IsNullOrEmpty(_getDeviceAddress());
         }
+
         private string GetTvName(string sdbPath)
         {
             var output = RunCommand(sdbPath, "devices");
-            var match = Regex.Match(output, @"(?<=\n)(?<device>[^\s]+)\s+device");
+            //var match = Regex.Match(output, @"(?<=\n)(?<device>[^\s]+)\s+device");
+            var match = Regex.Match(output, @"(?<=\n)([^\s]+)\s+device\s+(?<name>[^\s]+)");
 
-            return match.Success ? match.Groups["device"].Value.Trim() : "";
+            //return match.Success ? match.Groups["device"].Value.Trim() : "";
+            return match.Success ? match.Groups["name"].Value.Trim() : "";
         }
         private string RunCommand(string fileName, string arguments)
         {
